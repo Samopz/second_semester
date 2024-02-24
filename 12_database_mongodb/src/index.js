@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3333;
 const MONGODB_URI = process.env.MONGODB_URI;
 
-// mogodb
+// mongodb
 // create a connection
 // const db = await mongodb.connect(url)
 // const users = db.collection('users')
