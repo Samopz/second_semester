@@ -24,10 +24,18 @@ const userSchema = mongoose.Schema({
     default: "USER",
   },
   // createdAt, updatedAt
-});
-
-// Model
-const User = mongoose.model("User", userSchema, undefined, {
+}, {
   timestamps: true,
 });
+
+// userSchema.set("toJSON", {
+//   virtuals: true,
+//   versionKey: false,
+//   transform: function (doc, ret) {
+//     delete ret._id;
+//   },
+// });
+
+// Model
+const User = mongoose.model("User", userSchema,);
 export default User;

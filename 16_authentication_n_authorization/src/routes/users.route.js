@@ -5,7 +5,7 @@ import { adminMiddleware } from "../middleware/admin.middleware.js";
 
 const userRoute = Router();
 
-// userRoute.use(authorMiddleware);
+userRoute.use(authorMiddleware);
 
 userRoute.get("/", adminMiddleware, userController.getAllUsers);
 // userRoute.get("/example", userController.getAllUsers);
