@@ -12,12 +12,12 @@ export const getAllUsers = async (page = 1, limit = 10, query = null) => {
     // const filter = query ? { name: query } : {};
     // if value is "test" or "test@gmail.com" or 'test'
     const filter = query ? { name: { $regex: query, $options: "i" } } : {};
-     const users = await User.find(filter, {
-       password: 0,
+    const users = await User.find(filter, {
+      password: 0,
       //  __v: 0,
-     })
-       .skip(skip)
-       .limit(limit);
+    })
+      .skip(skip)
+      .limit(limit);
     const total = await User.countDocuments(filter);
     return {
       data: users,
@@ -28,6 +28,7 @@ export const getAllUsers = async (page = 1, limit = 10, query = null) => {
       },
     };
   } catch (error) {
+    console.log(error);
     throw new ErrorWithStatus(error.message, 500);
   }
 };

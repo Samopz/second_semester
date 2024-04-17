@@ -57,12 +57,13 @@ mongoose
 // ORM - Object Relational Mapping
 // ODM - Object Document Mapping
 
-app.get("/user", async (req, res) => {
+
+app.get("/user", async (req, res) => { 
   const users = await User.find();
   res.json(users);
 });
 
-app.get("/user/:userId", async (req, res) => {
+app.get("/user/:userId", async (req, res) => { 
   const { userId } = req.params;
   const users = await User.findOne({ _id: userId });
   res.json(users);
